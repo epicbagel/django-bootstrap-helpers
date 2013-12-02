@@ -1,0 +1,10 @@
+<div class="messages">
+	{% if messages %}
+		{% for message in messages %}
+			<div{% if message.tags %} class="alert alert-{{ message.tags }} fade in out"{% endif %}>
+				<a class="close" data-dismiss="alert" href="#">&times;</a>
+				{{ message }}
+			</div>
+		{% endfor %}
+	{% endif %}
+</div>

@@ -1,0 +1,25 @@
+{% load bootstrap_helpers %}
+{% if field_type == 'checkboxinput' %}
+	<div class="clearfix {{ field_type }} field-wrapper" id="{{ for_id }}_wrapper">
+		<label class="checkbox">
+			{{ field }}
+			<span>{{ field.label }}</span>
+		</label>
+		<p class="help-block">{{ field.help_text }}</p>
+	</div>
+{% else %}
+	<div class="clearfix form-group {{ field_type }} {% if field.errors %} error {% endif %} {% if not field.field.required %} optional {% endif %}" id="{{ for_id }}_wrapper">
+		{{ field.label_tag }}
+		{% if not field_type == "clearablefileinput" %}
+			{{ field|css:"form-control"}}
+		{% else %}
+			{{ field }}
+		{% endif %}
+		{% if field.errors %}
+			<span class="help-inline">{{ field.errors.0 }}</span>
+		{% endif %}
+		{% if field.help_text %}
+			<p class="help-block light">{{ field.help_text }}</p>
+		{% endif %}
+	</div>
+{% endif %}
