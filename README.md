@@ -18,6 +18,7 @@ Use in templates
 ----------------
 
     {% load bootstrap_helpers %}
+    
     {# Rending a form field #}
     <form action="/url/to/submit/" method="post">
         {% csrf_token %}
