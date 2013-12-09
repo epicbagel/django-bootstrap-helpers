@@ -18,9 +18,7 @@ Use in templates
 ----------------
 
     {% load bootstrap_helpers %}
-
-    # Rending a form field
-
+    {# Rending a form field #}
     <form action="/url/to/submit/" method="post">
         {% csrf_token %}
         {% for field in form %}
@@ -29,8 +27,7 @@ Use in templates
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    # Rending the message stack from django.contrib.messages
-
+    {# Rending the message stack from django.contrib.messages #}
     <div class="row">
       <div class="md-col-12">
         {% render_messages %}
