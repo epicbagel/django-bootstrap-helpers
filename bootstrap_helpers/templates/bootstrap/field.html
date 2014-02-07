@@ -11,7 +11,7 @@
 	<div class="clearfix form-group {{ field_type }} {% if field.errors %} error {% endif %} {% if not field.field.required %} optional {% endif %}" id="{{ for_id }}_wrapper">
 		{{ field.label_tag }}
 		{% if not field_type == "clearablefileinput" %}
-			{{ field|css:"form-control"}}
+			{{ field|required:field.field.required|css:"form-control"}}
 		{% else %}
 			{{ field }}
 		{% endif %}

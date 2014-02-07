@@ -18,6 +18,12 @@ def placeholder(field, text = None):
 	   'placeholder' : text or field.label,
    })
    return field
+   
+@register.filter
+def required(field, required):
+	if required:
+		field.field.widget.attrs.update({'required' : True})
+	return field
 
 @register.filter
 def css(field, text):
